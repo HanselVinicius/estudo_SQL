@@ -1,0 +1,85 @@
+CREATE TABLE tbCliente(
+CPF varchar(11),
+NOME VARCHAR(100),
+ENDERECO1 VARCHAR(150),
+ENDERECO2 VARCHAR(150),
+BAIRRO VARCHAR(50),
+CIDADE VARCHAR (50),
+ESTADO VARCHAR(50),
+CEP VARCHAR(8),
+IDADE SMALLINT,
+SEXO VARCHAR(1),
+LIMITE_CREDITO FLOAT,
+VOLUME_COMPRA FLOAT,
+PRIMEIRA_COMPRA BIT(1)
+);
+
+ALTER TABLE tbproduto 
+ADD COLUMN TAMANHO VARCHAR(150) after EMBALAGEM;
+
+
+CREATE TABLE TABELA_DE_VENDEDORES2(
+MATRICULA VARCHAR(5),
+NOME VARCHAR(100),
+PERCENTUAL_COMISSAO FLOAT
+);
+
+INSERT INTO tbproduto (
+	PRODUTO,NOME,EMBALAGEM,TAMANHO,SABOR,   PRECO_LISTA
+) VALUES (
+	'1037797','Clean - 2 Litros - Laranja','PET','2 Litros', 'Laranja',16.008
+);
+
+
+INSERT INTO tbproduto (
+	PRODUTO,NOME,EMBALAGEM,TAMANHO,SABOR,   PRECO_LISTA
+) VALUES (
+	'1000889','Sabor da Montanha - 700 ml - Uva','Garrafa','700 ml', 'Uva',6.309
+);
+
+
+INSERT INTO tbproduto (
+	PRODUTO,NOME,EMBALAGEM,TAMANHO,SABOR,   PRECO_LISTA
+) VALUES (
+	'1004327','Videira do Campo - 1,5 Litros - Melancia','PET','1,5 Litros', 'Melancia',19.51
+);
+
+
+
+
+
+SELECT * FROM tbproduto;
+
+
+
+INSERT INTO tabela_de_vendedores (MATRICULA,NOME,PERCENTUAL_COMISSAO)
+values ('00233','João Geraldo da Fonseca',0.10);
+
+
+INSERT INTO tabela_de_vendedores (MATRICULA,NOME,PERCENTUAL_COMISSAO)
+values ('00235','Márcio Almeida Silva',0.08);
+
+
+INSERT INTO tabela_de_vendedores (MATRICULA,NOME,PERCENTUAL_COMISSAO)
+values ('00236','Cláudia Morais',0.08);
+
+
+UPDATE tabela_de_vendedores SET PERCENTUAL_COMISSAO = 0.11
+WHERE MATRICULA = "00236";
+
+UPDATE tabela_de_vendedores SET NOME = ' José Geraldo da Fonseca Junior'
+WHERE MATRICULA = "00233";
+
+SELECT * FROM tabela_de_vendedores;
+
+
+DELETE FROM tabela_de_vendedores 
+WHERE MATRICULA = '00233';
+
+
+
+
+
+
+
+
